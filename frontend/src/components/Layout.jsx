@@ -180,7 +180,7 @@ const Layout = ({ children }) => {
                                     {user.role === 'DELIVERY_PARTNER' && (
                                         <>
                                             <NavItem to="/delivery/dashboard" icon={FiGrid} label="Dashboard" />
-                                            <NavItem to="/delivery/profile" icon={FiUser} label="Profile" />   {/* ✅ ADDED */}
+                                            <NavItem to="/delivery/profile" icon={FiUser} label="Profile" />   
                                             <NavItem to="/delivery/assigned" icon={FiTruck} label="Deliveries" />
                                         </>
                                     )}
@@ -251,7 +251,7 @@ const Layout = ({ children }) => {
                                         </>
                                     )}
 
-                                    <div className="h-6 w-px bg-slate-200 mx-2" /> {/* Divider */}
+                                    <div className="h-6 w-px bg-slate-200 mx-2" /> 
 
                                     {/* Universal Chat Link */}
                                     <NavItem to="/chat" icon={FiMessageCircle} label="Chat" />
