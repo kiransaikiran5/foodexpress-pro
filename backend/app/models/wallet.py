@@ -13,7 +13,6 @@ class Wallet(Base):
     referral_code = Column(String(20), unique=True, nullable=True)
     referred_by = Column(Integer, ForeignKey("customers.id"), nullable=True)
 
-    # Explicitly set foreign keys for each relationship
     customer = relationship(
         "Customer",
         foreign_keys=[customer_id],
@@ -23,7 +22,7 @@ class Wallet(Base):
     referrer = relationship(
         "Customer",
         foreign_keys=[referred_by],
-        # no back_populates required on Customer side, but we can add one if desired
+        
     )
     transactions = relationship(
         "WalletTransaction",
