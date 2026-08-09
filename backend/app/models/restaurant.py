@@ -36,7 +36,7 @@ class Restaurant(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
-    # Relationships (commented out to avoid missing model errors)
+    # Relationships
     owner = relationship("RestaurantOwner", back_populates="restaurant")
     menus = relationship("Menu", back_populates="restaurant", cascade="all, delete-orphan")
     
