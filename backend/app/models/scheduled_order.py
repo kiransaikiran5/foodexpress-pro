@@ -22,7 +22,7 @@ class ScheduledOrder(Base):
     coupon_id = Column(Integer, ForeignKey("coupons.id"), nullable=True)
     delivery_lat = Column(Float, nullable=True)
     delivery_lng = Column(Float, nullable=True)
-    scheduled_time = Column(DateTime(timezone=True), nullable=False)   # when the order should be placed
+    scheduled_time = Column(DateTime(timezone=True), nullable=False)   
     recurrence_type = Column(SqlEnum(RecurrenceType), default=RecurrenceType.NONE)
     is_active = Column(Boolean, default=True)
     last_processed_at = Column(DateTime(timezone=True), nullable=True)
