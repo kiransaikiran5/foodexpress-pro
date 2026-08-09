@@ -7,7 +7,7 @@ from app.models import user, address, customer, saved_location, restaurant_owner
 from app.api.v1 import auth, users, customers, restaurants, menus, combos, cart, orders, kitchen, delivery, admin_orders, payments, wallet, admin_coupons, reviews, notifications, chat, recommendations, owner_dashboard, delivery_dashboard, customer_dashboard, admin_dashboard, inventory, reports, refunds, branches, audit, business_intelligence, admin_settings, scheduled_orders, group_orders, reservations, predictions, inventory_automation, staff_management, delivery_earnings, membership, advanced_coupons, customer_recommendations, support, admin_campaigns, financial_dashboard, business_analytics, super_admin, monitoring
 
 
-from app.models.restaurant import Restaurant   # must exist
+from app.models.restaurant import Restaurant   
 from app.models.cuisine import Cuisine
 from app.models.restaurant_image import RestaurantImage
 from app.models.restaurant_cuisine import restaurant_cuisine
