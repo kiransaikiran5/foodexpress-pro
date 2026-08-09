@@ -12,19 +12,19 @@ class OrderStatus(str, enum.Enum):
     PICKED_UP = "PICKED_UP"
     DELIVERED = "DELIVERED"
     CANCELLED = "CANCELLED"
-    REJECTED = "REJECTED"          # new
+    REJECTED = "REJECTED"         
 
 class Order(Base):
     __tablename__ = "orders"
 
     id = Column(Integer, primary_key=True, index=True)
     customer_id = Column(Integer, ForeignKey("customers.id"), nullable=False)
-    restaurant_id = Column(Integer, ForeignKey("restaurants.id"), nullable=True)   # new
+    restaurant_id = Column(Integer, ForeignKey("restaurants.id"), nullable=True)   
     status = Column(Enum(OrderStatus), default=OrderStatus.PLACED, nullable=False)
     total_amount = Column(Float, nullable=False)
     discount = Column(Float, default=0.0)
     coupon_id = Column(Integer, ForeignKey("coupons.id"), nullable=True)
-    rejection_reason = Column(String(255), nullable=True)   # new
+    rejection_reason = Column(String(255), nullable=True)  
     delivery_lat = Column(Float, nullable=True)
     delivery_lng = Column(Float, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
@@ -34,7 +34,7 @@ class Order(Base):
 
     # Relationships
     customer = relationship("Customer", back_populates="orders")
-    restaurant = relationship("Restaurant", back_populates="orders")   # add relationship
+    restaurant = relationship("Restaurant", back_populates="orders")   
     items = relationship("OrderItem", back_populates="order", cascade="all, delete-orphan")
     coupon = relationship("Coupon", backref="orders", foreign_keys=[coupon_id])
     delivery = relationship("Delivery", uselist=False, back_populates="order")
