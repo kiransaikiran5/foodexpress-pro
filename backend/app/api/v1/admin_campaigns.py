@@ -157,7 +157,6 @@ def send_campaign(
             db.add(notif)
 
     # Email / SMS / Push would call external services here.
-    # Placeholder: we just mark as sent.
     campaign.status = "sent"
     campaign.sent_at = datetime.utcnow()
     db.commit()
