@@ -9,8 +9,8 @@ from app.models.restaurant import Restaurant
 from app.models.delivery_partner import DeliveryPartner
 from app.models.order import Order, OrderStatus
 from app.models.order_item import OrderItem
-from app.models.customer import Customer          # ← added
-from app.models.food_item import FoodItem         # already imported via OrderItem, but explicit is fine
+from app.models.customer import Customer         
+from app.models.food_item import FoodItem   
 from app.api.deps import role_required
 
 router = APIRouter(prefix="/admin/dashboard", tags=["Admin Dashboard"])
