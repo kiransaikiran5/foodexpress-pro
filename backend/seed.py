@@ -8,7 +8,7 @@ import app.models.customer
 import app.models.restaurant_owner
 import app.models.address
 import app.models.saved_location
-import app.models.restaurant          # <-- MUST import this because Customer references Restaurant
+import app.models.restaurant       
 
 def seed():
     # Create tables if they don't exist
