@@ -5,9 +5,9 @@ from datetime import datetime
 class CampaignCreate(BaseModel):
     title: str
     message: str
-    channel: str = "in_app"      # in_app, email, sms, push
-    audience_type: str = "all"   # all, custom
-    audience_filters: Optional[str] = None   # JSON string
+    channel: str = "in_app"     
+    audience_type: str = "all"  
+    audience_filters: Optional[str] = None  
     scheduled_at: Optional[datetime] = None
 
 class CampaignOut(BaseModel):
