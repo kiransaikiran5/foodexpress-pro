@@ -9,7 +9,7 @@ class SavedLocation(Base):
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     name = Column(String(100), nullable=False)          # e.g., "Gym", "Parent's House"
     address = Column(String(255), nullable=False)
-    latitude = Column(Float, nullable=True)             # For future map integration
+    latitude = Column(Float, nullable=True)             
     longitude = Column(Float, nullable=True)
 
     user = relationship("User", back_populates="saved_locations")
