@@ -10,7 +10,7 @@ from app.models.customer import Customer
 from app.models.coupon import Coupon
 from app.models.referral import Referral
 from app.models.order import Order
-from app.models.wallet import Wallet                  # <-- added
+from app.models.wallet import Wallet                
 from app.api.deps import get_current_active_user
 
 router = APIRouter(prefix="/coupons", tags=["Advanced Coupons"])
