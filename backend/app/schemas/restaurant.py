@@ -27,8 +27,8 @@ class RestaurantResponse(BaseModel):
     owner_id: int
     name: str
     description: Optional[str]
-    opening_time: Optional[time]        # not str
-    closing_time: Optional[time]        # not str
+    opening_time: Optional[time]        
+    closing_time: Optional[time]        
     delivery_radius_km: float
     is_active: bool
     status: RestaurantStatus
@@ -36,9 +36,9 @@ class RestaurantResponse(BaseModel):
     gst_doc_path: Optional[str]
     license_doc_path: Optional[str]
     rejection_reason: Optional[str]
-    created_at: Optional[datetime]      # not str
+    created_at: Optional[datetime]     
     updated_at: Optional[datetime] = None
-    cuisines: List[CuisineResponse] = []          # new
+    cuisines: List[CuisineResponse] = []         
     images: List[RestaurantImageResponse] = [] 
     latitude: Optional[float] = None
     longitude: Optional[float] = None
