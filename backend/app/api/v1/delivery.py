@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File, Form
 from sqlalchemy.orm import Session, joinedload
 from typing import List, Optional
-from datetime import datetime, date, timedelta   # added timedelta, date
-import random, string                             # added for coupon code
+from datetime import datetime, date, timedelta   
+import random, string                            
 
 from app.database import get_db
 from app.models.user import User, RoleEnum
@@ -11,7 +11,7 @@ from app.models.delivery import Delivery, DeliveryStatus
 from app.models.order import Order, OrderStatus
 from app.models.order_item import OrderItem
 from app.models.notification import Notification
-from app.models.coupon import Coupon              # added for cashback
+from app.models.coupon import Coupon             
 from app.schemas.delivery_partner import (
     DeliveryPartnerRegister, DeliveryPartnerUpdate, DeliveryPartnerResponse,
     AvailabilityUpdate, AdminVerify
