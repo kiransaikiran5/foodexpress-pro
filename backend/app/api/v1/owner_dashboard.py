@@ -12,7 +12,7 @@ from app.models.order import Order, OrderStatus
 from app.models.order_item import OrderItem
 from app.models.food_item import FoodItem
 from app.models.menu_category import MenuCategory
-from app.models.menu import Menu                           # <-- ADDED
+from app.models.menu import Menu                         
 from app.models.restaurant_review import RestaurantReview
 from app.schemas.order import OrderResponse
 from app.schemas.food_item import FoodItemResponse
