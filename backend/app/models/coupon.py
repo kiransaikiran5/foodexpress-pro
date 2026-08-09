@@ -39,7 +39,6 @@ class Coupon(Base):
     generated_for = relationship("User", backref="personal_coupons", foreign_keys=[generated_for_user_id])
     referral = relationship("Referral", backref="earned_coupon", foreign_keys=[earned_from_referral_id])
 
-    # Fix for ambiguous foreign keys: explicitly specify the column
     cashback_order = relationship(
         "Order",
         backref="cashback_coupons",
