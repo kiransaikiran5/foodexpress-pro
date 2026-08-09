@@ -19,8 +19,8 @@ from app.models.delivery import Delivery, DeliveryStatus
 from app.models.payment import Payment
 from app.models.notification import Notification
 from app.models.restaurant_branch import RestaurantBranch
-from app.models.customer_membership import CustomerMembership      # NEW
-from app.models.membership_plan import MembershipPlan              # NEW
+from app.models.customer_membership import CustomerMembership   
+from app.models.membership_plan import MembershipPlan          
 from app.schemas.order import OrderResponse
 from app.api.deps import get_current_active_user
 
@@ -81,8 +81,8 @@ def format_order_response(order: Order) -> dict:
         "status": order.status,
         "total_amount": order.total_amount,
         "discount": order.discount,
-        "membership_discount": order.membership_discount,    # NEW
-        "delivery_fee": order.delivery_fee,                  # NEW
+        "membership_discount": order.membership_discount,  
+        "delivery_fee": order.delivery_fee,                
         "coupon": coupon_info,
         "rejection_reason": order.rejection_reason,
         "delivery_id": delivery_id,
@@ -193,8 +193,8 @@ async def place_order(
         branch_id=branch_id,
         total_amount=total,
         discount=discount,
-        membership_discount=membership_discount,   # NEW
-        delivery_fee=delivery_fee,                 # NEW
+        membership_discount=membership_discount,   
+        delivery_fee=delivery_fee,                
         coupon_id=coupon_id,
         delivery_lat=delivery_lat,
         delivery_lng=delivery_lng,
