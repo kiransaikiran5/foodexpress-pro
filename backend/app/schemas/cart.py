@@ -28,7 +28,7 @@ class CartResponse(BaseModel):
     id: int
     user_id: int
     items: List[CartItemResponse] = []
-    coupon: Optional[dict] = None          # {id, code, discount_percent, max_discount}
+    coupon: Optional[dict] = None          
     subtotal: float = 0.0
     discount: float = 0.0
     total: float = 0.0
