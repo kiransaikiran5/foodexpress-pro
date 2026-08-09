@@ -9,7 +9,7 @@ class FoodItemCreate(BaseModel):
     price: float = Field(..., gt=0)
     is_veg: bool = True
     is_available: bool = True
-    image_url: Optional[str] = None   # we can add file upload later
+    image_url: Optional[str] = None   
 
 class FoodItemUpdate(BaseModel):
     name: Optional[str] = None
