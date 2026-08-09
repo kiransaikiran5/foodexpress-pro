@@ -18,7 +18,7 @@ class GroupOrder(Base):
     share_code = Column(String(20), unique=True, nullable=False)
     status = Column(SqlEnum(GroupOrderStatus), default=GroupOrderStatus.OPEN, nullable=False)
     total_amount = Column(Float, default=0.0)
-    order_id = Column(Integer, ForeignKey("orders.id"), nullable=True)          # real order after finalisation
+    order_id = Column(Integer, ForeignKey("orders.id"), nullable=True)          
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
