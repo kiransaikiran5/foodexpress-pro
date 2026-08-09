@@ -10,7 +10,7 @@ class UserBase(BaseModel):
     role: RoleEnum = RoleEnum.CUSTOMER
 
 class UserCreate(UserBase):
-    password: constr(min_length=8, max_length=72)   # ⬅️ Change to 72
+    password: constr(min_length=8, max_length=72)   
 
 class UserLogin(BaseModel):
     email: EmailStr
@@ -42,7 +42,7 @@ class PasswordResetRequest(BaseModel):
 
 class PasswordReset(BaseModel):
     token: str
-    new_password: constr(min_length=8, max_length=72)   # ⬅️ Change to 72
+    new_password: constr(min_length=8, max_length=72)  
 
 class VerifyEmail(BaseModel):
     token: str
