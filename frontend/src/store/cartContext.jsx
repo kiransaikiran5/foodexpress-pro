@@ -1,15 +1,15 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import api from '../services/api';
-import { useAuth } from './authContext'; // <-- Import your auth context
+import { useAuth } from './authContext'; 
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const { user } = useAuth(); // <-- Listen to the logged-in user
+    const { user } = useAuth(); 
     const [cartCount, setCartCount] = useState(0);
 
     const fetchCartCount = async () => {
-        // If there is no user, reset cart to 0 and stop.
+        
         if (!user) {
             setCartCount(0);
             return;
@@ -27,15 +27,15 @@ export const CartProvider = ({ children }) => {
         }
     };
 
-    // Auto-fetch the cart count whenever the user's login state changes
+    
     useEffect(() => {
         if (user?.role === 'CUSTOMER') {
 
             fetchCartCount();
         }
-    }, [user]); // <-- The magic happens here!
+    }, [user]); 
 
-    // Expose a manual refresh function for other components to call
+   
     const refreshCartCount = () => {
         fetchCartCount();
     };
