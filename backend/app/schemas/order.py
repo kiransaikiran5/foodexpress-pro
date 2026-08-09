@@ -19,7 +19,7 @@ class OrderResponse(BaseModel):
     customer_id: int
     restaurant_id: Optional[int] = None
     status: OrderStatus
-    total_amount: float            # final amount after discount
+    total_amount: float            
     items: List[OrderItemResponse] = []
     discount: float = 0.0
     coupon: Optional[dict] = None
@@ -27,10 +27,10 @@ class OrderResponse(BaseModel):
     delivery_id: Optional[int] = None
     delivery_lat: Optional[float] = None
     delivery_lng: Optional[float] = None
-    payment: Optional[dict] = None   # changed from PaymentResponse to dict
+    payment: Optional[dict] = None   
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
-    tracking: Optional[dict] = None  # only used in tracking endpoint, but harmless
+    tracking: Optional[dict] = None  
 
     class Config:
         from_attributes = True
