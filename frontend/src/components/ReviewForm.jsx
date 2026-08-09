@@ -23,7 +23,7 @@ const ReviewForm = ({ onSubmit, isSubmitting = false }) => {
             setRating(0);
             setComment('');
         } catch (err) {
-            // Errors should ideally be handled by the parent, but we catch here to reset loading
+           
             console.error('Review submission error:', err);
         } finally {
             setInternalLoading(false);
