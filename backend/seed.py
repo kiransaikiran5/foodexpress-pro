@@ -3,7 +3,6 @@ from app.database import SessionLocal, engine, Base
 from app.models.user import User, RoleEnum
 from app.core.security import get_password_hash
 
-# Import ALL model modules that define relationships, so SQLAlchemy can resolve them
 import app.models.customer
 import app.models.restaurant_owner
 import app.models.address
